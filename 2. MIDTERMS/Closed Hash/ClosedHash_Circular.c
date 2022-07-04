@@ -24,6 +24,11 @@ int main(){
 	int i;
 	
 	for(i = 0; i < 6; i++) insertDictionary(&D, elem[i]);
+	printf("curr:\t");
+	for(i = 0; i < 6; i++){
+		printf("%d\t", elem[i]);
+	}
+	printf("\n\n\n");
 	displayDictionary(D);
 
 	printf("Delete: [43]\n\n");
@@ -52,6 +57,10 @@ void insertDictionary(Dictionary *D, int newVal){
 					This table shows that 33 and 43 collides with their hash values '3'
 					hash = hash + (the index) % MAX is just added by 1
 					that's why 43 was inserted at index 4
+					
+				Other for loop for closed hashing circular:
+				
+				for(loc = (hash+1)%MAX; D->data[loc] != EMPTY && D->data[loc] != DELETED; loc = (loc+1)%MAX){}
 			*/
 			for(i = 1; D->data[hash] != EMPTY && D->data[hash] != DELETED; i++){
 				hash = (hash+i)%MAX;
@@ -64,27 +73,26 @@ void insertDictionary(Dictionary *D, int newVal){
 
 void deleteDictionary(Dictionary *D, int val){
 	int hash, i;
-	if(!(D->count > MAX)){
-		hash = hashValue(val);
-		if(D->data[hash] == val){
-			D->data[hash] = DELETED;
-		} else{
-			//using i variable if data collides newVal's hash value is added by 1
-			/*
-				Delete: [43]
-				DATA:   99      31      32      33      -1      -1      -1      -1      -1      39
-				INDEX:  [0]     [1]     [2]     [3]     [4]     [5]     [6]     [7]     [8]     [9]
-				
-					This table shows that deleting an element with the same hash value increments the hash value
-					to determine that the [elem == val]
-					the data[hash] gets the value of the data[count] which is -1
-			*/
-			for(i = 1; D->data[hash] != val; i++){
-				hash = (hash+i)%MAX;
-			}
-			D->data[hash] = D->data[D->count];
-			D->count--;
+	
+	hash = hashValue(val);
+	if(D->data[hash] == val){
+		D->data[hash] = DELETED;
+	} else{
+		//using i variable if data collides newVal's hash value is added by 1
+		/*
+			Delete: [43]
+			DATA:   99      31      32      33      -1      -1      -1      -1      -1      39
+			INDEX:  [0]     [1]     [2]     [3]     [4]     [5]     [6]     [7]     [8]     [9]
+			
+				This table shows that deleting an element with the same hash value increments the hash value
+				to determine that the [elem == val]
+				the data[hash] gets the value of the data[count] which is -1
+		*/
+		for(i = 1; D->data[hash] != val; i++){
+			hash = (hash+i)%MAX;
 		}
+		D->data[hash] = D->data[D->count];
+		D->count--;
 	}
 }
 
@@ -102,6 +110,14 @@ void displayDictionary(Dictionary D){
 	for(i = 0; i < MAX; i++){
 		printf("%d\t", D.data[i]);
 	}
+	/*
+		Search Length Formula V1:
+		//SL = (index+1)-hashValue
+		//SL = (index-hashValue)+1
+		
+		Search Length Formula V2:
+		//SL = (index+SIZE-hashValue+1)%SIZE
+	*/
 	printf("\nINDEX:\t");
 	for(i = 0; i < MAX; i++){
 		printf("[%d]\t", i);
