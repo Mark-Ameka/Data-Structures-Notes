@@ -59,7 +59,6 @@ ProdArrayList initProdAList(){
 void insertSortedUnique(VHeapProd *VSP, headList *HP, Product newProd){
 	//Code here...
 }
-
 void populateProducts(VHeapProd *VSP, headList *HP){
 	Product prod[MAX] = {{"1001", "Fish", 98.23, 90}, {"1002", "Meat", 154.92, 10},
 					    {"1003", "Steak", 293.22, 25}, {"1004", "Kimchi", 200.24, 555},

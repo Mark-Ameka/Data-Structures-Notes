@@ -16,7 +16,6 @@ void insertDictionary(Dictionary *D, int newVal);
 void deleteDictionary(Dictionary *D, int newVal);
 int hashValue(int newVal);
 void displayDictionary(Dictionary D);
- 
 
 int main(){
 	DATA elem = {31, 32, 33, 43, 39, 99};
