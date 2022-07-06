@@ -18,7 +18,6 @@ typedef struct{
 void initDictionary(Dictionary *D);
 void insertDictionary(Dictionary *D, Alpha newVal);
 void displayDictionary(Dictionary D);
- 
 
 int main(){
 	Alpha elem[8] = {{'A', 1}, {'B', 4}, {'C', 9}, {'D', 9}, {'E', 0}, {'F', 3}, {'G', 4}, {'H', 3}};
@@ -57,7 +56,7 @@ void initDictionary(Dictionary *D){
 }
 
 void displayDictionary(Dictionary D){
-	int i, sl = 0;
+	int i, sl = 0, avg = 0;
 	printf("index:\tdata:\thash:\tsearch length:\n");
 	for(i = 0; i < MAX; i++){
 		//SL = (index+SIZE-hashValue+1)%SIZE
@@ -71,6 +70,7 @@ void displayDictionary(Dictionary D){
 			printf(" sl = %d\n", -1);
 		} else{
 			sl = ((i+MAX)-D.data[i].hashV+1)%MAX;
+			avg += sl;
 			
 			printf("[%d] =>\t", i);
 			printf("%c ->\t", D.data[i].elem);
@@ -78,5 +78,6 @@ void displayDictionary(Dictionary D){
 			printf(" sl = %d\n", sl);
 		}
 	}
-	printf("\n\nCount: %d\n\n", D.count);
+	printf("\nAverage SL: %d", avg/D.count);
+	printf("\nCount: %d\n\n", D.count);
 }

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#define MAX 15
+#define MAX 14
 
 typedef int SET[MAX];
 typedef struct node{
@@ -32,13 +32,14 @@ int getMaxElem(BST T);
 int deleteMin(BST *T);
 int deleteMax(BST *T);
 
-bool isMember(BST T, int val);
+bool isMember_NR(BST T, int val);
+bool isMember_R(BST T, int val);
 int maxHeight(BST T);
 bool isBalance(BST T);
 
 int main(){
 	BST T;
-	SET x = {29, 5, 12, 66, 20, 50, 40, 68, 99, 2, 1, 23, 63, 56, 71};
+	SET x = {77,28,8,10,18,39,29,76,90,89,85,95,94,98};
 	int i, toFind;
 		
 	initTree(&T);
@@ -56,8 +57,8 @@ int main(){
 	int maxVal = getMaxElem(T);
 	printf("Largest element(returning int): %d\n", maxVal);
 	
-	toFind = 20;
-	printf("\n%d is %s\n\n", toFind, isMember(T, toFind) == 1 ? "found" : "not found");
+	toFind = 76;
+	printf("\n%d is %s\n\n", toFind, isMember_NR(T, toFind) == 1 ? "found" : "not found");
 	
 	printf("Deleted: 40\n");
 	deleteTree_NR(&T, 40);
@@ -231,11 +232,21 @@ int deleteMax(BST *T){
 	return retVal;
 }
 
-bool isMember(BST T, int val){
+bool isMember_NR(BST T, int val){
 	for(; T != NULL && T->data != val;){
 		T = (T->data < val) ? T->right : T->left;
 	}
 	return T != NULL && T->data == val ? true : false;
+}
+
+bool isMember_R(BST T, int val){
+	if(T != NULL && T->data != val){
+		T = (T->data < val) ? T->right : T->left;
+		isMember_R(T, val);
+	} else{
+		//return T != NULL ? true : false;
+		return T != NULL && T->data == val ? true : false;
+	}
 }
 
 int maxHeight(BST T){
