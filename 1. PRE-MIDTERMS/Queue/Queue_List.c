@@ -153,11 +153,41 @@ void displayQueueList(QueueList Q){
 	}
 	printf("\n");
 	
-//	while(Q.front != NULL){
-//		printf("%d ", Q.front->data);
-//		Q.front = Q.front->link;
-//	}
-//	printf("\n");
+	/*
+	TRAVERSAL: 
+	while(Q.front != NULL){
+		printf("%d ", Q.front->data);
+		Q.front = Q.front->link;
+	}
+	printf("\n");
+	*/
+	
+	/*
+	NOT CALLING USER-DEFINED FUNCTION:
+	while(Q.front != NULL){
+		printf("%d ", Q.front->data);
+		temp = Q.front;
+		Q.front = temp->link;
+		if(QQ.front == NULL){
+			QQ.front = temp;
+		} else{
+			QQ.rear->link = temp;
+		}
+		QQ.rear = temp;
+	}
+	while(QQ.front != NULL){
+		temp = QQ.front;
+		QQ.front = temp->link;
+		if(Q.front == NULL){
+			Q.front = temp;
+		} else{
+			Q.rear->link = temp;
+		}
+		Q.rear = temp;
+	}
+	*/
+	
+	
 }
 
 bool isEmpty(QueueList Q){
