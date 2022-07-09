@@ -11,6 +11,21 @@
 // boolean values (0,1)
 // 2^8 = 256 or 0 - 255 values
 
+/*
+	[DATA TYPE]						[BYTES]						[BITS]
+	char			-----------		1 byte		-----------		8 Bits
+	unsigned char	-----------		1 byte		-----------		8 Bits
+	short			-----------		2 bytes		-----------		16 Bits
+	unsigned short	-----------		2 bytes		-----------		16 Bits
+	int				-----------		4 bytes		-----------		32 Bits - TurboC: 16 Bits : GCC: 32 Bits and TurboC: 2 Bytes
+	unsigned int	-----------		2 bytes		-----------		16 Bits
+	long			-----------		4 bytes		-----------		32 Bits
+	unsigned long	-----------		4 bytes		-----------		32 Bits
+	float			-----------		4 bytes		-----------		32 Bits
+	double			-----------		8 bytes		-----------		64 Bits
+	long double		-----------		10 bytes	-----------		128 Bits
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #define MAX 8
@@ -59,7 +74,6 @@ SET bitVectorToSet(SET *A){
 	SET x = 0;
 	int i = 0;
 	int bits = (sizeof(*A) * 8)-1;
-	printf("%d ", bits);
 	unsigned int mask = 1 << bits;
 	
 	for(; mask > 0; mask >>= 1){
