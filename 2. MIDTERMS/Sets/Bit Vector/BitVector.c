@@ -1,3 +1,13 @@
+/*
+	[Truth Table] : 1 TRUE : 0 FALSE
+	--------------------------------------------------------
+	X	Y		AND		OR		NAND	OR		XOR		XAND
+	0	0	-	0	-	0	-	0	-	0	-	0	-	1
+	0	1	-	0	-	1	-	1	-	0	-	1	-	0
+	1	0	-	0	-	1	-	1	-	0	-	1	-	0
+	1	1	-	1	-	1	-	1	-	1	-	0	-	1
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #define SIZE 8
