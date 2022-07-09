@@ -57,7 +57,7 @@ SET *getUnion(SET A, SET B){
 	SET *C = NULL;
 	int i;
 	
-	C = calloc(1, sizeof(SET));
+	C = malloc(sizeof(SET)*SIZE);
 	if(C != NULL){
 		for(i = 0; i < SIZE; i++){
 			(*C)[i] = A[i] | B[i];
@@ -69,7 +69,7 @@ SET *getIntersect(SET A, SET B){
 	SET *C = NULL;
 	int i;
 	
-	C = malloc(sizeof(SET));
+	C = malloc(sizeof(SET)*SIZE);
 	if(C != NULL){
 		for(i = 0; i < SIZE; i++){
 			(*C)[i] = A[i] & B[i];
@@ -83,7 +83,7 @@ SET *getDifference(SET A, SET B){
 	SET *C = NULL;
 	int i;
 	
-	C = malloc(sizeof(SET));
+	C = malloc(sizeof(SET)*SIZE);
 	if(C != NULL){
 		for(i = 0; i < SIZE; i++){
 			(*C)[i] = A[i] & ~B[i];
