@@ -60,6 +60,7 @@ void insertDictionary(Dictionary *D, int newVal){
 					
 				Other for loop for closed hashing circular:
 				
+				NOTE: hash is added by 1 since its current value has an element that stored.
 				for(loc = (hash+1)%MAX; D->data[loc] != EMPTY && D->data[loc] != DELETED; loc = (loc+1)%MAX){}
 			*/
 			for(i = 1; D->data[hash] != EMPTY && D->data[hash] != DELETED; i++){
