@@ -43,7 +43,7 @@ int hashValue(int newVal){
 }
 
 void insertDictionary(Dictionary *D, int newVal){
-	int hash, i, loc;
+	int hash, i;
 	if(D->count < MAX){
 		hash = hashValue(newVal);
 		if(D->data[hash] == newVal){
@@ -60,20 +60,20 @@ void insertDictionary(Dictionary *D, int newVal){
 					
 				Other for loop for closed hashing circular:
 				
-				for(i = 1; D->data[hash] != EMPTY && D->data[hash] != DELETED; i++){
-					hash = (hash+i)%MAX;
-				}
+				NOTE: hash is added by 1 since its current value has an element that stored.
+				for(loc = (hash+1)%MAX; D->data[loc] != EMPTY && D->data[loc] != DELETED; loc = (loc+1)%MAX){}
 			*/
-			//NOTE: hash is added by 1 since its current value has an element that stored.
-			for(loc = (hash+1)%MAX; D->data[loc] != EMPTY && D->data[loc] != DELETED; loc = (loc+1)%MAX){}
-			D->data[loc] = newVal;
+			for(i = 1; D->data[hash] != EMPTY && D->data[hash] != DELETED; i++){
+				hash = (hash+i)%MAX;
+			}
+			D->data[hash] = newVal;
 			D->count++;
 		}
 	}
 }
 
 void deleteDictionary(Dictionary *D, int val){
-	int hash, i, loc;
+	int hash, i;
 	
 	hash = hashValue(val);
 	if(D->data[hash] == val){
@@ -88,13 +88,11 @@ void deleteDictionary(Dictionary *D, int val){
 				This table shows that deleting an element with the same hash value increments the hash value
 				to determine that the [elem == val]
 				the data[hash] gets the value of the data[count] which is -1
-				
-				for(i = 1; D->data[hash] != val; i++){
-					hash = (hash+i)%MAX;
-				}
 		*/
-		for(loc = (hash+1)%MAX; D->data[loc] != val; loc = (loc+1)%MAX){}
-		D->data[loc] = D->data[D->count];
+		for(i = 1; D->data[hash] != val; i++){
+			hash = (hash+i)%MAX;
+		}
+		D->data[hash] = D->data[D->count];
 		D->count--;
 	}
 }
@@ -116,12 +114,12 @@ void displayDictionary(Dictionary D){
 		printf("%d\t", D.data[i]);
 	}
 	/*
-		Search Length Formula V1: 
-			//SL = (index+1)-hashValue
-			//SL = (index-hashValue)+1
+		Search Length Formula V1:
+		//SL = (index+1)-hashValue
+		//SL = (index-hashValue)+1
 		
 		Search Length Formula V2:
-			//SL = (index+SIZE-hashValue+1)%SIZE
+		//SL = (index+SIZE-hashValue+1)%SIZE
 	*/
 	printf("\nINDEX:\t");
 	for(i = 0; i < MAX; i++){
@@ -136,15 +134,16 @@ void displayDictionary(Dictionary D){
 			asl += sl;
 			printf("%d\t", sl);
 		} else{
-			printf("--\t");
+			printf("-2\t");
 		}
 	}
-	printf("\nAverage SL: %.2f\n\n", asl/D.count);
+	printf("\n\nCount: %d\n", D.count);
+	printf("Average SL: %.2f\n\n", asl/D.count);
 }
 
 int isMember(Dictionary D, int newVal){
 	int hash, i;
-	
+
 	hash = hashValue(newVal);
 	for(i = 1; D.data[hash] != EMPTY && D.data[hash] != newVal; i++){
 		hash = (hash+i)%MAX;
