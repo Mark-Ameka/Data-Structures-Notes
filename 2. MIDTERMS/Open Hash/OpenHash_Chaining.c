@@ -1,3 +1,18 @@
+/*
+	Open Hashing (Chaining) - allows the set to be stored in potentially unlimited
+	---------------------------------------------------------------------
+	D[0] =>		10  	->  	NULL
+	D[1] =>		NULL
+	D[2] =>		72  	->  	NULL
+	D[3] =>		63  	-> 		43 		-> 		NULL
+	D[4] =>		NULL
+	D[5] =>		25  	-> 		75 		->		45 		->		NULL
+	D[6] => 	16  	->   	NULL
+	D[7] => 	NULL
+	D[8] => 	78 		->  	NULL
+	D[9] => 	99		->  	NULL
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <windows.h>
@@ -102,7 +117,7 @@ void displayDictionary(Dictionary D){
 	for(i = 0; i < MAX; i++){
 		printf("%3s[%d] => ", "D", i);
 		HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-		
+
 		for(trav = D[i]; trav != NULL; trav = trav->link){
 			SetConsoleTextAttribute(h, 3);
 			printf("%4d", trav->data);
