@@ -106,7 +106,9 @@ void initDictionary(Dictionary *D){
 }
 
 void displayDictionary(Dictionary D){
-	int i;
+	int i, sl = 0;
+	float asl = 0;
+	int hash;
 	printf("DATA:\t");
 	for(i = 0; i < MAX; i++){
 		printf("%d\t", D.data[i]);
@@ -123,7 +125,20 @@ void displayDictionary(Dictionary D){
 	for(i = 0; i < MAX; i++){
 		printf("[%d]\t", i);
 	}
-	printf("\n\nCount: %d\n\n", D.count);
+	
+	printf("\nSL:\t");
+	for(i = 0; i < MAX; i++){
+		if(D.data[i] != EMPTY){
+			hash = hashValue(D.data[i]);
+			sl = ((i+MAX)-hash+1)%MAX;
+			asl += sl;
+			printf("%d\t", sl);
+		} else{
+			printf("-2\t");
+		}
+	}
+	printf("\n\nCount: %d\n", D.count);
+	printf("Average SL: %.2f\n\n", asl/D.count);
 }
 
 int isMember(Dictionary D, int newVal){
