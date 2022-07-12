@@ -43,10 +43,10 @@ int hashValue(int newVal){
 }
 
 void insertDictionary(Dictionary *D, int newVal){
-	int hash, i, loc;
+	int hash, loc;
 	if(D->count < MAX){
 		hash = hashValue(newVal);
-		if(D->data[hash] == newVal){
+		if(D->data[hash] == EMPTY){
 			D->data[hash] = newVal;
 		} else{
 			//using i variable if data collides newVal's hash value is added by 1
@@ -67,8 +67,8 @@ void insertDictionary(Dictionary *D, int newVal){
 			//NOTE: hash is added by 1 since its current value has an element that stored.
 			for(loc = (hash+1)%MAX; D->data[loc] != EMPTY && D->data[loc] != DELETED; loc = (loc+1)%MAX){}
 			D->data[loc] = newVal;
-			D->count++;
 		}
+		D->count++;
 	}
 }
 

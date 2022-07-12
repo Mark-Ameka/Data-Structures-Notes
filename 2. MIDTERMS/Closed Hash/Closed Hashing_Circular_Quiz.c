@@ -41,8 +41,8 @@ void insertDictionary(Dictionary *D, Alpha newVal){
 		} else{
 			for(loc = (hash+1)%MAX; D->data[loc].elem != EMPTY && D->data[loc].elem != DELETED; loc = (loc+1)%MAX){}
 			D->data[loc] = newVal;
-			D->count++;
 		}
+		D->count++;
 	}
 }
 
@@ -56,7 +56,8 @@ void initDictionary(Dictionary *D){
 }
 
 void displayDictionary(Dictionary D){
-	int i, sl = 0, avg = 0;
+	int i, sl = 0;
+	float avg = 0;
 	printf("index:\tdata:\thash:\tsearch length:\n");
 	for(i = 0; i < MAX; i++){
 		//SL = (index+SIZE-hashValue+1)%SIZE
@@ -78,6 +79,6 @@ void displayDictionary(Dictionary D){
 			printf(" sl = %d\n", sl);
 		}
 	}
-	printf("\nAverage SL: %d", avg/D.count);
+	printf("\nAverage SL: %.2f", avg/D.count);
 	printf("\nCount: %d\n\n", D.count);
 }
