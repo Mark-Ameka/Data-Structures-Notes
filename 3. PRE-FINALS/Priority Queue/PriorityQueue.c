@@ -15,7 +15,6 @@ int deleteMax(Heap *H);
 void maxHeapify(Heap *H);
 void heapSort(Heap *H);
 void display(Heap H);
-int binarySearch(Heap H, int target);
 
 int main(){
     Heap H;
@@ -167,22 +166,6 @@ void heapSort(Heap *H){
         H->Elem[H->lastNdx + 1] = min;
     }
     H->lastNdx = oldLast;
-}
-
-int binarySearch(Heap H, int target){
-	int lc, rc, mid;
-	lc = 0;
-	rc = H.lastNdx;
-	mid = (lc + rc)/2;
-	while(lc <= rc && target != H.Elem[mid]){
-		if(target > H.Elem[mid]){
-			lc = mid+1;
-		} else{
-			rc = mid-1;
-		}
-		mid = (lc + rc)/2;
-	}
-	return (lc <= rc) ? 1 : 0;
 }
 
 void display(Heap H){
