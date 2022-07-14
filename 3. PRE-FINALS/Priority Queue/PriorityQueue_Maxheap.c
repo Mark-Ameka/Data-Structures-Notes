@@ -31,7 +31,7 @@ int main(){
     for(i = 0; i < len; i++) insert(&H, x[i]);
 	
     printf("\nHeapsort:\n"); heapSort(&H); display(H);
-	
+    
     return 0;
 }
 

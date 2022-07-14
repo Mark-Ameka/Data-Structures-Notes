@@ -13,6 +13,15 @@
 	D[9] => 	99		->  	NULL
 */
 
+/*
+	  1010 1110
+	1 0101 0001
+	
+	1 0101 0001
+			  1 +
+	1 0101 0010
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <windows.h>
@@ -105,6 +114,7 @@ void deleteDictionary(Dictionary D, int val){
 	
 }
 
+//Hash Values could be any algorithm
 int hashValue(int num){
 	return (num)%MAX;
 }

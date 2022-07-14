@@ -90,8 +90,17 @@ int numOfBits(SET x){
 	int sum = 0;
 	int bits = (sizeof(x) * 8)-1;
 	unsigned int mask = 1 << bits;
+	/*
+		Bits value: 7
+		128	64 32 16 8 4 2 1
+		0   0  0  0  0 0 0 1
+		
+		mask = 1 << bits
+		128	64 32 16 8 4 2 1
+		1   0  0  0  0 0 0 0
+	*/
 	
-	for(; mask > 0; mask >>= 1){
+	for(; mask > 0; mask >>= 1){ //mask = mask >> 1
 		sum += (mask & x) ? 1 : 0;
 	}
 	return sum;
