@@ -12,10 +12,10 @@ typedef struct{
 void initializeHeap(Heap *H);
 void insert(Heap *H, int num);
 
-int deleteMin(Heap *H);
-void minHeapify(Heap *H);
+int deleteMin(Heap *H);				//O(logn)
+void minHeapify(Heap *H);			//O(n)
 
-void heapSort(Heap *H);
+void heapSort(Heap *H);				//O(2nlogn) - O(nlogn)
 void display(Heap H);
 
 int main(){
