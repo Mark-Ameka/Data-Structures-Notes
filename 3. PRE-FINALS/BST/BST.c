@@ -1,3 +1,25 @@
+/*
+	Binary Search Tree: is a node-based binary tree data structure which has the following properties:
+		* The left subtree of a node contains only nodes with keys lesser than the node’s key.
+		* The right subtree of a node contains only nodes with keys greater than the node’s key.
+		* The left and right subtree each must also be a binary search tree.					(GeeksForGeeks)
+*/
+
+/*       Given Tree Structure:
+*
+*					  	  77
+*					   /      \
+*                    28        90 
+*                  /   \      /   \
+*                8    39     89   95
+*                \   /  \   /    /  \
+*                10 29 76  85   94  98
+*
+*		Pre-Order:      77 28 8 10 18 39 29 76 90 89 85 95 94 98
+*		In-Order:       8 10 18 28 29 39 76 77 85 89 90 94 95 98
+*		Post-Order:     18 10 8 29 76 39 28 85 89 94 98 95 90 77
+*/
+	
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -39,7 +61,7 @@ bool isBalance(BST T);
 
 int main(){
 	BST T;
-	SET x = {77,28,8,10,18,39,29,76,90,89,85,95,94,98};
+	SET x = {77, 28, 8, 10, 18, 39, 29, 76, 90, 89, 85, 95, 94, 98};
 	int i, toFind;
 		
 	initTree(&T);
