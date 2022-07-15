@@ -76,7 +76,8 @@ void left_rotate(AVL *A){
 
 //An AVL Tree is balance if the returned value will not be less than to -1
 //		:1 is Balance
-//		:2 is Balance	
+//		:-1 is Balance	
+//		:0 is Balance	
 int get_balance(AVL A){
 	return A == NULL ? 0 : height(A->left) - height(A->right);
 }
