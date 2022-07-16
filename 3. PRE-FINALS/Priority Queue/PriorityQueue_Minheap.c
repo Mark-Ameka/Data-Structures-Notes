@@ -135,10 +135,12 @@ int is_minheap(Heap H){
 		// If left child is greater than its parent then return false
 		if (H.data[child] < H.data[parent]){
 			flag = 0;
+			break;			
 		}
 		// If right child is greater its parent then return false
 		if(child+1 <= H.lastNdx && H.data[child+1] < H.data[parent]){
 			flag = 0;
+			break;			
 		}
 	}
 	
