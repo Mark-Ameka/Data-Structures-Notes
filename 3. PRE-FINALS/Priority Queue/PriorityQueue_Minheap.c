@@ -1,4 +1,12 @@
 //Minheap
+/*
+	Formula:
+	Left 	= (P*2)+1
+	Right 	= (P*2)+2			Alternatives: LC+1 / (P*2+1)+1
+	
+	Parent  = (child-1)/2
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #define SIZE 15
@@ -15,6 +23,7 @@ void insert(Heap *H, int num);
 int deleteMin(Heap *H);				//O(logn)
 void minHeapify(Heap *H);			//O(n)
 
+int is_minheap(Heap H);
 void heapSort(Heap *H);				//O(2nlogn) - O(nlogn)
 void display(Heap H);
 
@@ -28,6 +37,9 @@ int main(){
     for(i = 0; i < len; i++) insert(&H, x[i]);
 	
     printf("\nHeapsort:\n"); heapSort(&H); display(H);
+    
+    minHeapify(&H);
+    printf("\n%s", is_minheap(H) == 1 ? "array is in minheap" : "array is not in minheap");
 	
     return 0;
 }
@@ -111,6 +123,36 @@ void minHeapify(Heap *H){
 			lowPar--;
 		}
 	}
+}
+
+int is_minheap(Heap H){
+	int parent;
+	
+	//root to last interval node
+	int child = 0, flag = 1;
+	for(parent = 0; parent < (H.lastNdx-1)/2; parent++){
+		child = (parent*2)+1;
+		// If left child is greater than its parent then return false
+		if (H.data[child] < H.data[parent]){
+			flag = 0;
+		}
+		// If right child is greater its parent then return false
+		if(child+1 <= H.lastNdx && H.data[child+1] < H.data[parent]){
+			flag = 0;
+		}
+	}
+	
+	/*
+	*			Given min-heap : 
+	*		
+	*		       10 - root is the minimum element
+	*		      /  \
+	*		     15   30
+	*		    /  \  /  \		
+	*		   40  50 100 40 - There is no condition where child is greater than its parent, So it is a min-heap.
+	*/
+	
+	return flag;
 }
 
 void heapSort(Heap *H){

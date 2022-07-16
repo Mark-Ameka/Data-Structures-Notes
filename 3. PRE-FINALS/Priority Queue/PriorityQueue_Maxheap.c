@@ -1,6 +1,10 @@
 //Maxheap
 /*
+	Formula:
+	Left 	= (P*2)+1
+	Right 	= (P*2)+2			Alternatives: LC+1 / (P*2+1)+1
 	
+	Parent  = (child-1)/2
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,10 +19,11 @@ typedef struct{
 void initializeHeap(Heap *H);
 void insert(Heap *H, int num);
 
-int deleteMax(Heap *H);
-void maxHeapify(Heap *H);
+int deleteMax(Heap *H);				//O(logn)
+void maxHeapify(Heap *H);			//O(n)
 
-void heapSort(Heap *H);
+int is_maxheap(Heap H);
+void heapSort(Heap *H);				//O(2nlogn) - O(nlogn)
 void display(Heap H);
 
 int main(){
@@ -31,6 +36,9 @@ int main(){
     for(i = 0; i < len; i++) insert(&H, x[i]);
 	
     printf("\nHeapsort:\n"); heapSort(&H); display(H);
+    
+    maxHeapify(&H);
+    printf("\n%s", is_maxheap(H) == 1 ? "array is in maxheap" : "array is not in maxheap");
     
     return 0;
 }
@@ -115,6 +123,26 @@ void maxHeapify(Heap *H){
 			lowPar--;
 		}
 	}
+}
+
+int is_maxheap(Heap H){
+	int parent;
+	
+	//root to last interval node
+	int child = 0, flag = 1;
+	for(parent = 0; parent < (H.lastNdx-1)/2; parent++){
+		child = (parent*2)+1;
+		// If left child is greater than its parent then return false
+		if (H.data[child] > H.data[parent]){
+			flag = 0;
+		}
+		// If right child is greater its parent then return false
+		if(child+1 <= H.lastNdx && H.data[child+1] > H.data[parent]){
+			flag = 0;
+		}
+	}
+	
+    return flag;
 }
 
 void heapSort(Heap *H){
