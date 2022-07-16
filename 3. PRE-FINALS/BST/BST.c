@@ -85,6 +85,9 @@ int main(){
 	printf("Deleted: 40\n");
 	deleteTree_NR(&T, 40);
 		
+//	int w = deleteMax(&T);
+//	int u = deleteMin(&T);
+	
 	displayAllOrder(T);
 	
 	printf("\nMax height is: %d", maxHeight(T));
@@ -236,6 +239,7 @@ int deleteMin(BST *T){
 	
 	for(trav = T; *T != NULL && (*trav)->left != NULL; trav = &(*trav)->left){}
 	temp = *trav;
+	*trav = temp->right;
 	retVal = temp->data;
 	free(temp);
 	
@@ -248,6 +252,7 @@ int deleteMax(BST *T){
 	
 	for(trav = T; *T != NULL && (*trav)->right != NULL; trav = &(*trav)->right){}
 	temp = *trav;
+	*trav = temp->left;
 	retVal = temp->data;
 	free(temp);
 	
