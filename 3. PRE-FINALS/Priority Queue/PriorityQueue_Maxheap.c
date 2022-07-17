@@ -156,7 +156,7 @@ void heapSort(Heap *H){
 	    	insert(H, H->data[i]);
 		}
 	*/
-	maxHeapify(H);	
+	maxHeapify(H);
 
     oldLast = H->lastNdx;
     while (H->lastNdx != -1){
