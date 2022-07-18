@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #define MAX 10
 
+typedef int DATA[MAX];
 typedef struct{
 	int Elem[MAX];
 	int lastNdx;

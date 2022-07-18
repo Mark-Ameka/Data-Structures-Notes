@@ -1,0 +1,5 @@
+x = digit
+
+x x + = postfix	= Reversed Polish Notation
+x + x = infix
++ x x = prefix	= Polish Notation
