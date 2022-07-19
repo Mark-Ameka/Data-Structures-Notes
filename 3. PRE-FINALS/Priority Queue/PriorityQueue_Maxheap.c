@@ -132,12 +132,12 @@ int is_maxheap(Heap H){
 	int child = 0, flag = 1;
 	for(parent = 0; parent < (H.lastNdx-1)/2; parent++){
 		child = (parent*2)+1;
-		// If left child is greater than its parent then return false
+		// If left child is greater than its parent then 0
 		if (H.data[child] > H.data[parent]){
 			flag = 0;
 			break;
 		}
-		// If right child is greater its parent then return false
+		// If right child is greater its parent then 0
 		if(child+1 <= H.lastNdx && H.data[child+1] > H.data[parent]){
 			flag = 0;
 			break;
