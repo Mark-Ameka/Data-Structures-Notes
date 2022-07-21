@@ -5,6 +5,13 @@
 	Right 	= (P*2)+2			Alternatives: LC+1 / (P*2+1)+1
 	
 	Parent  = (child-1)/2
+	
+	x = digit
+
+	x x + = postfix	= Reversed Polish Notation
+	x + x = infix
+	+ x x = prefix	= Polish Notation
+
 */
 #include <stdio.h>
 #include <stdlib.h>
