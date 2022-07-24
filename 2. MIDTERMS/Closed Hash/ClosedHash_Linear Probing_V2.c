@@ -18,7 +18,7 @@ int hash_val(char nval){
 	return (nval)%MAX;
 }
 
-void insert_dic(Dictionary D, char nval[]){
+void insert_dic(Dictionary D, Set nval){
 	int i, hash, loc;
 	
 	for(i = 0; i < SET_MAX; i++){
@@ -28,7 +28,7 @@ void insert_dic(Dictionary D, char nval[]){
 	}
 }
 
-void delete_dic(Dictionary D, char nval[], int size){
+void delete_dic(Dictionary D, Set nval, int size){
 	int i, hash, loc;
 	
 	for(i = 0; i < size; i++){
@@ -43,8 +43,10 @@ void delete_dic(Dictionary D, char nval[], int size){
 }
 
 void display_dic(Dictionary D){
-	int i, sl = -1, asl;
+	int i, sl = 0;
 	int hash;
+	int ctr = 0;
+	float asl = 0;
 	
 	printf("%11s | %2s | %3s\n", "Value", "Hash", "SL");
 	for(i = 0; i < MAX; i++){
@@ -60,6 +62,8 @@ void display_dic(Dictionary D){
 		} else{
 			hash = hash_val(D[i]);
 			sl += (i-hash)+1;
+			asl += sl;
+			ctr++;
 			
 			printf("%3c", D[i]);
 			printf("%7d", hash);
@@ -67,7 +71,8 @@ void display_dic(Dictionary D){
 		}
 		printf("\n");
 	}
-	printf("\n");
+	printf("Average SL: %.2f", (asl/ctr));
+	printf("\n\n");
 }
 
 int main(){
@@ -81,7 +86,6 @@ int main(){
 	display_dic(D);
 	
 	//delete
-	printf("Deleted[G, B]:\n\n");
 	delete_dic(D, (Set){'G', 'B'}, 2);
 	display_dic(D);
 	
