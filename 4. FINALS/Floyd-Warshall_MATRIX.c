@@ -21,6 +21,16 @@ void floydWarshall(int graph[][num_v]){
 	for(k = 0; k < num_v; k++){
 		for(i = 0; i < num_v; i++){
 			for(j = 0; j < num_v; j++){
+				//Formula:
+				/*	
+					n = num1
+					n2 = num2
+					m = middle vertex
+					
+					D[n,n2] < D[n,m] + D[m,n2]
+					
+					E.G: D[2,3] < D[2,1] + D[1,3]
+				*/
 				if(matrix[i][k] + matrix[k][j] < matrix[i][j]){
 					matrix[i][j] = matrix[i][k] + matrix[k][j];
 				}
