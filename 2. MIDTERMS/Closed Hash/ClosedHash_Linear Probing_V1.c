@@ -8,7 +8,7 @@
 typedef int SET[SIZE];
 typedef struct{
 	int elem;
-	int next; 
+	int next;
 }Hash;
 
 typedef struct{
