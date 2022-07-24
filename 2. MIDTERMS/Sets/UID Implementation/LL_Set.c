@@ -22,11 +22,11 @@ void ll_populate_list(SET *S, int A[], int count){
 
 SET get_intersection(SET A, SET B) {
     SET B_trav, C = NULL;
-    for (; A != NULL; A = A->next) {
-        for (B_trav = B; B_trav != NULL && B_trav->data != A->data; B_trav = B_trav->next) {}
-        if (B_trav != NULL && B_trav->data == A->data) {
+    for(; A != NULL; A = A->next){
+        for(B_trav = B; B_trav != NULL && B_trav->data != A->data; B_trav = B_trav->next){}
+        if(B_trav != NULL && B_trav->data == A->data){
             SET temp = malloc(sizeof(NodeType));
-            if (temp != NULL) {
+            if(temp != NULL){
                 temp->data = A->data;
                 temp->next = C;
                 C = temp;
@@ -40,9 +40,9 @@ SET get_union_unsorted(SET A, SET B) {
     SET temp, C = NULL;
     SET trav, travC;
     // insert all elements of A
-    for (trav = A; trav != NULL; trav = trav->next) {
+    for(trav = A; trav != NULL; trav = trav->next){
         temp = malloc(sizeof(NodeType));
-        if (temp != NULL) {
+        if(temp != NULL){
             temp->data = trav->data;
             temp->next = C;
             C = temp;
@@ -50,12 +50,12 @@ SET get_union_unsorted(SET A, SET B) {
     }
 
     // insert last unique
-    for (trav = B; trav != NULL; trav = trav->next) {
+    for(trav = B; trav != NULL; trav = trav->next){
         // check every element of B if it is already present in Set C
-        for (travC = C; travC != NULL && travC->data != trav->data; travC = travC->next) {}
-        if (travC == NULL) {
+        for(travC = C; travC != NULL && travC->data != trav->data; travC = travC->next){}
+        if(travC == NULL){
             temp = malloc(sizeof(NodeType));
-            if (temp != NULL) {
+            if(temp != NULL){
                 temp->data = trav->data;
                 temp->next = C;
                 C = temp;
@@ -65,24 +65,24 @@ SET get_union_unsorted(SET A, SET B) {
     return C;
 }
 
-SET get_union_sorted(SET A, SET B) {
+SET get_union_sorted(SET A, SET B){
     SET temp, C = NULL;
 
-    while (A != NULL && B != NULL) {
-        if (A->data < B->data) {
+    while(A != NULL && B != NULL){
+        if(A->data < B->data){
             temp = malloc(sizeof(NodeType));
-            if (temp != NULL) {
+            if(temp != NULL){
                 temp->data = A->data;
                 temp->next = C;
                 C = temp;
             }
             A = A->next;
-        } else {
-            if (A->data == B->data) {
+        } else{
+            if(A->data == B->data){
                 A = A->next;
             } 
             temp = malloc(sizeof(NodeType));
-            if (temp != NULL) {
+            if(temp != NULL){
                 temp->data = B->data;
                 temp->next = C;
                 C = temp;
@@ -91,13 +91,13 @@ SET get_union_sorted(SET A, SET B) {
         }
     }
 
-    if (B != NULL) {
+    if(B != NULL){
         A = B;
     }
 
-    while (A != NULL) {
+    while(A != NULL){
         temp = malloc(sizeof(NodeType));
-        if (temp != NULL) {
+        if(temp != NULL){
             temp->data = A->data;
             temp->next = C;
             C = temp;
@@ -109,13 +109,13 @@ SET get_union_sorted(SET A, SET B) {
 }
 
 // whats in A that not in B
-SET get_difference(SET A, SET B) {
+SET get_difference(SET A, SET B){
     SET temp, trav, C = NULL;
-    for (; A != NULL; A = A->next) {
-        for (trav = B; trav != NULL && trav->data != A->data; trav = trav->next) {}
-        if (trav == NULL) {
+    for(; A != NULL; A = A->next){
+        for(trav = B; trav != NULL && trav->data != A->data; trav = trav->next){}
+        if(trav == NULL){
             temp = malloc(sizeof(NodeType));
-            if (temp != NULL) {
+            if(temp != NULL){
                 temp->data = A->data;
                 temp->next = C;
                 C = temp;

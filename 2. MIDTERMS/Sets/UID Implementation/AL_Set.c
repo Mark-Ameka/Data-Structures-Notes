@@ -4,18 +4,17 @@
 // doing operations requires traversal 
 // CRUD O(N)
 #define SET_MAX 10
-typedef struct {
+typedef struct{
     int data[SET_MAX];
     int count;
-} SET;
+}SET;
 
 // unsorted
-SET get_intersection(SET A, SET B) {
+SET get_intersection(SET A, SET B){
     SET C = {.count = 0};
     int i, k;
-    for (i = 0; i < A.count; i++) {
-        for (k = 0; k < B.count && A.data[i] != B.data[k]; k++) {}
-
+    for(i = 0; i < A.count; i++){
+        for (k = 0; k < B.count && A.data[i] != B.data[k]; k++){}
         if (k < B.count && A.data[i] == B.data[k]) {
             C.data[C.count++] = A.data[i];
         }
@@ -24,49 +23,51 @@ SET get_intersection(SET A, SET B) {
     return C;
 }
 
-SET get_union_unsorted(SET A, SET B) { // O(N^2)
+SET get_union_unsorted(SET A, SET B){ // O(N^2)
     SET C = {.count = 0};
     int i, k;
     // insert elements of set A
-    for (i = 0; i < A.count; i++) {
+    for(i = 0; i < A.count; i++){
         C.data[C.count++] = A.data[i];
     }
 
     // for elements of b, insert last unique
-    for (i = 0; i < B.count; i++) {
-        for (k = 0; k < C.count; k++) {
-            if (B.data[i] == C.data[k]) 
-                break;
+    for(i = 0; i < B.count; i++){
+        for(k = 0; k < C.count; k++){
+            if(B.data[i] == C.data[k]){
+            	break;	
+			}
         }
-        if (k == C.count)
+        if(k == C.count){
             C.data[C.count++] = B.data[i];
+		}
     }
 
     return C;
 }
 
-SET get_union_sorted(SET A, SET B) { // O(N+N) == O(N)
+SET get_union_sorted(SET A, SET B){ // O(N+N) == O(N)
     SET C = {.count = 0};   
     int a_ctr, b_ctr;
     a_ctr = b_ctr = 0;
 
-    while (a_ctr < A.count && b_ctr < B.count) {
-        if (A.data[a_ctr] < B.data[b_ctr]) {
+    while(a_ctr < A.count && b_ctr < B.count){
+        if(A.data[a_ctr] < B.data[b_ctr]) {
             C.data[C.count++] = A.data[a_ctr++];
-        } else {
-            if (A.data[a_ctr] == B.data[b_ctr]) {
+        } else{
+            if(A.data[a_ctr] == B.data[b_ctr]){
                 a_ctr++;
             }
             C.data[C.count++] = B.data[b_ctr++];
         }
     }
 
-    if (b_ctr < B.count) {
+    if(b_ctr < B.count){
         A = B;
         a_ctr = b_ctr;
     }
 
-    while (a_ctr < A.count) {
+    while(a_ctr < A.count){
         C.data[C.count++] = A.data[a_ctr++];
     }
 
@@ -74,12 +75,12 @@ SET get_union_sorted(SET A, SET B) { // O(N+N) == O(N)
 }
 
 // what's in A thats not in B
-SET get_difference(SET A, SET B) {
+SET get_difference(SET A, SET B){
     SET C = {.count = 0};
     int i, k;
-    for (i = 0; i < A.count; i++) {
-        for (k = 0; k < B.count && A.data[i] != B.data[k]; k++) {}
-        if (k == B.count || A.data[i] != B.data[k]) {
+    for(i = 0; i < A.count; i++){
+        for(k = 0; k < B.count && A.data[i] != B.data[k]; k++){}
+        if(k == B.count || A.data[i] != B.data[k]){
             C.data[C.count++] = A.data[i];
         }
     }   
@@ -87,14 +88,14 @@ SET get_difference(SET A, SET B) {
     return C;
 }
 
-SET get_merge(SET A, SET B) {
+SET get_merge(SET A, SET B){
     SET C = {.count = 0};
 
     C = get_intersection(A, B);
     
-    if (C.count == 0) {
+    if(C.count == 0){
         C = get_union_unsorted(A, B);
-    } else {
+    } else{
         printf("disjoint set\n");
         C.count = 0;
     }
@@ -112,8 +113,7 @@ void visualize_array(int A[], int count){
 }
 
 
-int main() {
-
+int main(){
     SET A = {.count = 4, .data = {1,2,3,4}};
     printf("SET A:\n");
     visualize_array(A.data, A.count);
