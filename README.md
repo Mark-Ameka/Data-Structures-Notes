@@ -33,9 +33,7 @@ Legend: '|' Additional Link
 - **: [MIDTERM TO FINALS](https://forms.gle/RHuFqzrDRYEEY4oy6)**
 ## NOTES: 
 - **: [DSA](https://drive.google.com/drive/folders/1NGNpS0llsmSxVVeX6CZ_0rJLSwSJ7QJW)**
-```
-Recordings:
-```
+## Recordings:
 - **: [SUMMER_2022](https://drive.google.com/drive/folders/1cuSG7Y5aTcbSQKc1gp7vmxzZkh_YvjSv)**
 - **: [DSA_2021](https://drive.google.com/drive/u/0/folders/1UrpMsXDRsGe4VTb8LlFubACZ14pYuFnH)**
 - **: [DSA_2021(With Notes)](https://drive.google.com/drive/folders/1AWitMbTVKn1JQSGTW3xvm7JZbrIU0_4g)**
