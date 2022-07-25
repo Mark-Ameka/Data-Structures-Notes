@@ -1,4 +1,4 @@
-# Data-Structure-Notes
+# Data-Structures-Notes
 > A Data Structures and Algorithm collectanea of Implementations and Algorithms for Applications
 ## Concepts:
 ```
