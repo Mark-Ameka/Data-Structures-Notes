@@ -17,16 +17,16 @@ Legend: '|' Additional Link
 	':' Main Link
 ```
 - **: [PRE-MIDTERMS](https://forms.gle/WjJ78RewQBvcccHi8)** :trophy:
-- **: [PRE-MIDTERMS](https://forms.gle/1cmLXqfXnmdXGPF86)**
-- **: [MIDTERM](https://forms.gle/baKLYq7wn3zyps9DA)**
-- **| [MIDTERM](https://forms.gle/eVkXDHtetxqujmuA9)**
-- **: [PRE-FINALS_T1](https://forms.gle/8NpvPHPWPNFwtku37)**
-- **: [PRE-FINALS_T2](https://forms.gle/5dYubo5ojZoLsda76)**
-- **: [PRE-FINALS_T3](https://forms.gle/rjYaAA4VvMK9yXXCA)**
-- **: [PRE-FINALS_PT](https://forms.gle/W37ArEoarAVtYpxt9)**
-- **| [PRE-FINALS](https://forms.gle/kkeQHX8ev6637tCK7)**
-- **: [FINALS](https://forms.gle/NdL7ATZabBwj88bw8)**
-- **| [FINALS](https://forms.gle/Ja3eTCGX3zSdHDtM6)**
+- **: [PRE-MIDTERMS](https://forms.gle/1cmLXqfXnmdXGPF86)** :trophy:
+- **: [MIDTERM](https://forms.gle/baKLYq7wn3zyps9DA)**     :trophy:
+- **| [MIDTERM](https://forms.gle/eVkXDHtetxqujmuA9)**     :trophy:
+- **: [PRE-FINALS_T1](https://forms.gle/8NpvPHPWPNFwtku37)** :trophy:
+- **: [PRE-FINALS_T2](https://forms.gle/5dYubo5ojZoLsda76)** :trophy:
+- **: [PRE-FINALS_T3](https://forms.gle/rjYaAA4VvMK9yXXCA)** :trophy:
+- **: [PRE-FINALS_PT](https://forms.gle/W37ArEoarAVtYpxt9)** :trophy:
+- **| [PRE-FINALS](https://forms.gle/kkeQHX8ev6637tCK7)** :trophy:
+- **: [FINALS](https://forms.gle/NdL7ATZabBwj88bw8)** :trophy:
+- **| [FINALS](https://forms.gle/Ja3eTCGX3zSdHDtM6)** :trophy:
 ```
 [All IN ONE]
 ```
