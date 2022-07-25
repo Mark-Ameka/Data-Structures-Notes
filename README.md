@@ -30,7 +30,7 @@ Legend: '|' Additional Link
 - **: [MIDTERM TO FINALS](https://forms.gle/RHuFqzrDRYEEY4oy6)** :trophy:
 ## NOTES: 
 - **: [DSA](https://drive.google.com/drive/folders/1NGNpS0llsmSxVVeX6CZ_0rJLSwSJ7QJW)** :books:
-## Recordings:
+## RECORDINGS:
 - **: [SUMMER_2022](https://drive.google.com/drive/folders/1cuSG7Y5aTcbSQKc1gp7vmxzZkh_YvjSv)** :camera_flash:
 - **: [DSA_2021](https://drive.google.com/drive/u/0/folders/1UrpMsXDRsGe4VTb8LlFubACZ14pYuFnH)** :camera_flash:
 - **: [DSA_2021(With Notes)](https://drive.google.com/drive/folders/1AWitMbTVKn1JQSGTW3xvm7JZbrIU0_4g)** :camera_flash:
