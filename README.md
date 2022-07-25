@@ -12,11 +12,8 @@ Graphs Algorithms
 
 ## Links for _Reviewers_:
 
->Legend: '|' Additional Link
->	 ':' Main Link	
-
-PRE-MID	: https://forms.gle/WjJ78RewQBvcccHi8
-	  https://forms.gle/1cmLXqfXnmdXGPF86
+[PRE-MID](https://forms.gle/WjJ78RewQBvcccHi8) ::
+[PRE-MID](https://forms.gle/1cmLXqfXnmdXGPF86) ||
 
 MIDTERM	: https://forms.gle/baKLYq7wn3zyps9DA
         | https://forms.gle/eVkXDHtetxqujmuA9
