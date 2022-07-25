@@ -12,8 +12,8 @@ Graphs Algorithms
 
 ## Links for _Reviewers_:
 
-* _[PRE-MID](https://forms.gle/WjJ78RewQBvcccHi8) ::_
-[PRE-MID](https://forms.gle/1cmLXqfXnmdXGPF86) ||
+- **[PRE-MID](https://forms.gle/WjJ78RewQBvcccHi8) ::**
+- **[PRE-MID](https://forms.gle/1cmLXqfXnmdXGPF86) ||**
 
 MIDTERM	: https://forms.gle/baKLYq7wn3zyps9DA
         | https://forms.gle/eVkXDHtetxqujmuA9
