@@ -17,7 +17,7 @@ Legend: '|' Additional Link
 	':' Main Link
 ```
 - **: [PRE-MIDTERMS](https://forms.gle/WjJ78RewQBvcccHi8)** :blue_book:
-- **: [PRE-MIDTERMS](https://forms.gle/1cmLXqfXnmdXGPF86)** :blue_book:
+	- **: [PRE-MIDTERMS](https://forms.gle/1cmLXqfXnmdXGPF86)** :blue_book:
 - **: [MIDTERM](https://forms.gle/baKLYq7wn3zyps9DA)** :green_book:
 - **| [MIDTERM](https://forms.gle/eVkXDHtetxqujmuA9)** :green_book:
 - **: [PRE-FINALS_T1](https://forms.gle/8NpvPHPWPNFwtku37)** :orange_book:
