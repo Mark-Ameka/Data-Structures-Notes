@@ -16,7 +16,7 @@ Graphs Algorithms
 Legend: '|' Additional Link
 	':' Main Link
 ```
-- **: [PRE-MIDTERMS](https://forms.gle/WjJ78RewQBvcccHi8)**
+- **: [PRE-MIDTERMS](https://forms.gle/WjJ78RewQBvcccHi8)** :trophy:
 - **: [PRE-MIDTERMS](https://forms.gle/1cmLXqfXnmdXGPF86)**
 - **: [MIDTERM](https://forms.gle/baKLYq7wn3zyps9DA)**
 - **| [MIDTERM](https://forms.gle/eVkXDHtetxqujmuA9)**
