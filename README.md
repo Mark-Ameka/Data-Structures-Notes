@@ -11,13 +11,11 @@ Graphs Algorithms
 ```
 
 ## Links for _Reviewers_:
-```
-Legend: '|' Additional Link
-	      ':' Main Link	
-	      ''
-```
-```
-**PRE-MID**	: https://forms.gle/WjJ78RewQBvcccHi8
+
+>Legend: '|' Additional Link
+>	 ':' Main Link	
+
+PRE-MID	: https://forms.gle/WjJ78RewQBvcccHi8
 	  https://forms.gle/1cmLXqfXnmdXGPF86
 
 MIDTERM	: https://forms.gle/baKLYq7wn3zyps9DA
@@ -30,4 +28,3 @@ PREFI	: T1: https://forms.gle/8NpvPHPWPNFwtku37
 	| https://forms.gle/kkeQHX8ev6637tCK7
 FINALS  : https://forms.gle/NdL7ATZabBwj88bw8
 	| https://forms.gle/Ja3eTCGX3zSdHDtM6
-```
