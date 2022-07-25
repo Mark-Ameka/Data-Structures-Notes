@@ -14,7 +14,6 @@
 
 typedef int SET[SIZE];
 
-void createSET(SET S, SET data);
 void insertSET(SET S, int pos);
 void deleteSET(SET S, int pos);
 SET *getUnion(SET A, SET B);
@@ -42,13 +41,6 @@ int main(){
 	printf("SET D:\t"); displaySET(*D);
 	
 	return 0;
-}
-
-void createSET(SET S, SET data){
-	int i;
-	for(i = 0; i < SIZE; i++){
-		S[data[i]] = 1;
-	}
 }
 
 void insertSET(SET S, int pos){

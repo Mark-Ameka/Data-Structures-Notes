@@ -70,7 +70,7 @@ void left_rotate(AVL *A){
 	(*x)->height = max(height((*x)->left), height((*x)->right)) + 1;
 	y->height = max(height(y->left), height(y->right)) + 1;
 	
-	//Since we are not returning let *A point to x
+	//Since we are not returning let *A point to y
 	*A = y;
 }
 
