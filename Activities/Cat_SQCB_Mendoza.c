@@ -82,7 +82,7 @@ void populateCats(VirtualMain *VH){
 								{"Turkish Van", "tortoiseshell", 20, 10}, {"Japanese Bobtail", "White", 10, 12},
 								{"Scottish Fold", "Brown", 13, 15}, {"LaPerm", "Chocolate", 10, 10}};
 	int i;					
-	for(i = 0; i < 10; i++){
+	for(i = 0; i < H_MAX/2; i++){
 		insert_cat(VH, Cats[i]);
 	}
 }
