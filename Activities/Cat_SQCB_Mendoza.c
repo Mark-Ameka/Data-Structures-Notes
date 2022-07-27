@@ -35,14 +35,41 @@ typedef struct{
 }VirtualMain;
 
 void init_everything(VirtualMain *VH){
-	//Initialize here...
+	//Main Heap
+	VH->MainHead = -1;
+	
+	//Stack Heap
+	VH->StackHead = -1;
+	
+	VH->CH = calloc(1, sizeof(struct CC));
+	if(VH->CH != NULL){
+		(VH->CH)->Data = malloc(sizeof(NodeCat)*H_MAX);
+		int i;
+		for(i = H_MAX-1; i >= 0; i--){
+			strcpy((VH->CH)->Data[i].Info.catBreed, "xxxxx");
+			(VH->CH)->Data[i].nextCat = i-1;
+		}
+		(VH->CH)->catAvail = H_MAX-1;
+	}
+	
+	//Queue Heap
+	(VH->Q).FC = -1;
+	(VH->Q).RC = -1;
 }
 
 /*
 	function inserts cat into the main virtual head at first.
 */
 void insert_cat(VirtualMain *VH, CatDetails newCat){
-	//Code here...
+	Type temp = (VH->CH)->catAvail;
+	
+	if(temp != -1){
+		(VH->CH)->catAvail = (VH->CH)->Data[temp].nextCat;
+		
+		(VH->CH)->Data[temp].Info = newCat;
+		(VH->CH)->Data[temp].nextCat = VH->MainHead;
+		VH->MainHead = temp;
+	}
 }
 
 /*
@@ -56,7 +83,7 @@ void populateCats(VirtualMain *VH){
 								{"Scottish Fold", "Brown", 13, 15}, {"LaPerm", "Chocolate", 10, 10}};
 	int i;					
 	for(i = 0; i < 10; i++){
-		//Call here...
+		insert_cat(VH, Cats[i]);
 	}
 }
 
@@ -66,7 +93,29 @@ void populateCats(VirtualMain *VH){
 	Note: StachHead and MainHead shares THE SAME Heap.
 */
 Type bigger_weight(VirtualMain *VH, Type threshold){ //Threshold: 13
-	//Code here...
+	Type ret_stack = VH->StackHead;
+	Type temp, *trav;
+	
+	for(trav = &VH->MainHead; *trav != -1;){
+		if(VH->CH->Data[*trav].Info.cat_W > threshold){
+			temp = (VH->CH)->catAvail;
+			(VH->CH)->catAvail = (VH->CH)->Data[temp].nextCat;
+			
+			if(temp != -1){
+				(VH->CH)->Data[temp].Info = (VH->CH)->Data[*trav].Info;
+				(VH->CH)->Data[temp].nextCat = ret_stack;
+				ret_stack = temp;
+			}
+			
+			temp = *trav;
+			*trav = (VH->CH)->Data[temp].nextCat;
+			(VH->CH)->Data[temp].nextCat = (VH->CH)->catAvail;
+			(VH->CH)->catAvail = temp;
+		} else{
+			trav = &(VH->CH)->Data[*trav].nextCat;
+		}
+	}
+	return ret_stack;
 }
 
 /*
@@ -75,7 +124,58 @@ Type bigger_weight(VirtualMain *VH, Type threshold){ //Threshold: 13
 	NOTE: Insert at first for lesser run time.
 */
 void lesser_ls(VirtualMain *VH, Type threshold){ //Threshold: 14
-	//Code here...
+	Type temp;
+	Type *trav_s, *trav_m;
+	
+	for(trav_s = &VH->StackHead; *trav_s != -1;){
+		if((VH->CH)->Data[*trav_s].Info.cat_LS < threshold){
+			temp = (VH->CH)->catAvail;
+			(VH->CH)->catAvail = (VH->CH)->Data[temp].nextCat;
+			
+			if(temp != -1){
+				(VH->CH)->Data[temp].Info = (VH->CH)->Data[*trav_s].Info;
+				(VH->CH)->Data[temp].nextCat = -1;
+				if(VH->Q.FC == -1){
+					VH->Q.FC = temp;
+				} else{
+					(VH->CH)->Data[VH->Q.RC].nextCat = temp;
+				}
+				VH->Q.RC = temp;
+			}
+			
+			temp = *trav_s;
+			*trav_s = (VH->CH)->Data[temp].nextCat;
+			(VH->CH)->Data[temp].nextCat = (VH->CH)->catAvail;
+			(VH->CH)->catAvail = temp;
+		} else{
+			trav_s = &(VH->CH)->Data[*trav_s].nextCat;
+		}
+	}
+	
+	for(trav_m = &VH->MainHead; *trav_m != -1;){
+		if((VH->CH)->Data[*trav_m].Info.cat_LS < threshold){
+			temp = (VH->CH)->catAvail;
+			(VH->CH)->catAvail = (VH->CH)->Data[temp].nextCat;
+			
+			if(temp != -1){
+				(VH->CH)->Data[temp].Info = (VH->CH)->Data[*trav_m].Info;
+				(VH->CH)->Data[temp].nextCat = -1;
+				if(VH->Q.FC == -1){
+					VH->Q.FC = temp;
+				} else{
+					(VH->CH)->Data[VH->Q.RC].nextCat = temp;
+				}
+				VH->Q.RC = temp;
+			}
+			
+			temp = *trav_m;
+			*trav_m = (VH->CH)->Data[temp].nextCat;
+			(VH->CH)->Data[temp].nextCat = (VH->CH)->catAvail;
+			(VH->CH)->catAvail = temp;
+		} else{
+			trav_m = &(VH->CH)->Data[*trav_m].nextCat;
+		}
+	}
 }
 
 //Display Function
