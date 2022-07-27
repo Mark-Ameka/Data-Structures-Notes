@@ -41,9 +41,13 @@ void init_everything(VirtualMain *VH){
 	//Stack Heap
 	VH->StackHead = -1;
 	
+	//allocate the virtual heap
 	VH->CH = calloc(1, sizeof(struct CC));
 	if(VH->CH != NULL){
+		//allocate the array of cats
 		(VH->CH)->Data = malloc(sizeof(NodeCat)*H_MAX);
+		
+		//initialize the virtual heap
 		int i;
 		for(i = H_MAX-1; i >= 0; i--){
 			strcpy((VH->CH)->Data[i].Info.catBreed, "xxxxx");
@@ -61,11 +65,12 @@ void init_everything(VirtualMain *VH){
 	function inserts cat into the main virtual head at first.
 */
 void insert_cat(VirtualMain *VH, CatDetails newCat){
+	//initialize temp
 	Type temp = (VH->CH)->catAvail;
+	(VH->CH)->catAvail = (VH->CH)->Data[temp].nextCat;
 	
+	//insert main
 	if(temp != -1){
-		(VH->CH)->catAvail = (VH->CH)->Data[temp].nextCat;
-		
 		(VH->CH)->Data[temp].Info = newCat;
 		(VH->CH)->Data[temp].nextCat = VH->MainHead;
 		VH->MainHead = temp;
@@ -98,15 +103,18 @@ Type bigger_weight(VirtualMain *VH, Type threshold){ //Threshold: 13
 	
 	for(trav = &VH->MainHead; *trav != -1;){
 		if(VH->CH->Data[*trav].Info.cat_W > threshold){
+			//initialize temp
 			temp = (VH->CH)->catAvail;
 			(VH->CH)->catAvail = (VH->CH)->Data[temp].nextCat;
 			
+			//insert stack
 			if(temp != -1){
 				(VH->CH)->Data[temp].Info = (VH->CH)->Data[*trav].Info;
 				(VH->CH)->Data[temp].nextCat = ret_stack;
 				ret_stack = temp;
 			}
 			
+			//delete and deallocate avail
 			temp = *trav;
 			*trav = (VH->CH)->Data[temp].nextCat;
 			(VH->CH)->Data[temp].nextCat = (VH->CH)->catAvail;
@@ -129,9 +137,11 @@ void lesser_ls(VirtualMain *VH, Type threshold){ //Threshold: 14
 	
 	for(trav_s = &VH->StackHead; *trav_s != -1;){
 		if((VH->CH)->Data[*trav_s].Info.cat_LS < threshold){
+			//initialize temp
 			temp = (VH->CH)->catAvail;
 			(VH->CH)->catAvail = (VH->CH)->Data[temp].nextCat;
 			
+			//insert queue
 			if(temp != -1){
 				(VH->CH)->Data[temp].Info = (VH->CH)->Data[*trav_s].Info;
 				(VH->CH)->Data[temp].nextCat = -1;
@@ -143,6 +153,7 @@ void lesser_ls(VirtualMain *VH, Type threshold){ //Threshold: 14
 				VH->Q.RC = temp;
 			}
 			
+			//delete and deallocate avail
 			temp = *trav_s;
 			*trav_s = (VH->CH)->Data[temp].nextCat;
 			(VH->CH)->Data[temp].nextCat = (VH->CH)->catAvail;
@@ -154,9 +165,11 @@ void lesser_ls(VirtualMain *VH, Type threshold){ //Threshold: 14
 	
 	for(trav_m = &VH->MainHead; *trav_m != -1;){
 		if((VH->CH)->Data[*trav_m].Info.cat_LS < threshold){
+			//initialize temp
 			temp = (VH->CH)->catAvail;
 			(VH->CH)->catAvail = (VH->CH)->Data[temp].nextCat;
 			
+			//insert stack
 			if(temp != -1){
 				(VH->CH)->Data[temp].Info = (VH->CH)->Data[*trav_m].Info;
 				(VH->CH)->Data[temp].nextCat = -1;
@@ -168,6 +181,7 @@ void lesser_ls(VirtualMain *VH, Type threshold){ //Threshold: 14
 				VH->Q.RC = temp;
 			}
 			
+			//delete and deallocate avail
 			temp = *trav_m;
 			*trav_m = (VH->CH)->Data[temp].nextCat;
 			(VH->CH)->Data[temp].nextCat = (VH->CH)->catAvail;
