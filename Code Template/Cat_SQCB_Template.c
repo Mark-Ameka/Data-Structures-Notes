@@ -23,18 +23,22 @@ typedef struct{
 }*CatHeap;					//Dynamic Structure
 
 typedef struct{
+	CatHeap CH;
+	Type CStack;		//Stack Head
+	Type CatHead;		//Heap Head
+}VirtualMain;
+
+typedef struct{
 	Type FC;
 	Type RC;
 }CQueue;					//Queue Structure
 
-typedef Type CStack;		//Stack Head
-typedef Type CatHead;		//Heap Head
 
 void initEverything(){
 	//Code here...
 }
 
-void InsertCat(CatHeap *C, CatHead *H, CatDetails newCat){
+void InsertCat(VirtualMain VH, CatDetails newCat){
 	//Code here...
 }
 

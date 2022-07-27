@@ -234,7 +234,7 @@ int main(){
 	AL A;
 	Heap H;
 	
-	init_everything(&L, &A);
+	init_LL_AL(&L, &A);
 	
 	L = populate_to_ll();
 	display_list(L);
