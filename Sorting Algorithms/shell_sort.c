@@ -1,4 +1,6 @@
 /*
+	Shell sort is mainly a variation of [Insertion Sort].
+	
 	It first sorts elements that are far apart from each other and 
 	successively reduces the interval/gap between the elements to be sorted.
 	Replacement for insertion sort, where it takes long time to complete given task.

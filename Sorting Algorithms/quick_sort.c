@@ -1,4 +1,6 @@
 /*
+	Like Merge Sort, QuickSort is a Divide and Conquer algorithm.
+	
 	Quick Sort = pivot
 	pivote which means central point
 	It picks an element as a pivot and partitions the given array around the picked pivot.
