@@ -11,6 +11,89 @@
 	Auxiliary Space: O(1)
 */
 
+/*
+	Given an array:
+	Our gap is size divided by 2 and compare and swap.
+	size/2 = 8/2 = 4
+	
+	9	8	3	7	5	6	4	1
+	^		    	^
+	+---------------+
+	
+	swap:
+	5	8	3	7	9	6	4	1
+	^		    	^
+	+---------------+
+	
+	then do the same process.
+	5	8	3	7	9	6	4	1
+		^		    	^
+		+---------------+
+		6				8
+			^		        ^
+			+---------------+
+			3				4
+				^		    	^
+				+---------------+
+				1				7
+	
+	will be:
+	5	6	3	1	9	8	4	7
+	
+	if gap reaches the end of the array divide the gap by 2 again.
+	size/4 = 8/4 = 2
+	
+	5	6	3	1	9	8	4	7
+	^		^
+	+-------+
+	3		5
+		^		^
+		+-------+
+		1		6
+	
+	At this point, all the elements in the array lying at the current interval are compared.
+	as the gap changes, iteration will also change
+	3	1	5	6	9	8	4	7
+	
+	3	1	5	6	9	8	4	7
+		^		^		^
+		+-------+-------+
+			^		^		^
+			+-------+-------+
+			4		5		9
+		^		^		^		^
+		+-------+-------+-------+
+		1		6		7		8
+	
+	again, as the gap changes, iteration will also change
+	N/8 = 8/8 =1
+	
+	3	1	4	6	5	7	9	8
+	^	^
+	+---+
+	1	3
+		^	^
+		+---+
+		3	4
+			^	^
+			+---+
+			4	6
+				^	^
+				+---+
+				5	6
+					^	^
+					+---+
+					6	7
+						^	^
+						+---+
+						7	9
+							^	^
+							+---+
+							9	8
+							
+	1	3	4	5	6	7	8	9		<---- list is sorted
+*/
+
 #include <stdio.h>
 #define MAX 10
 
