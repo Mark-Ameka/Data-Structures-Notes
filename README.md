@@ -25,6 +25,7 @@ Legend: '|' Additional Link
 - **: [PRE-FINALS_T3](https://forms.gle/rjYaAA4VvMK9yXXCA)** :orange_book:
 - **: [PRE-FINALS_PT](https://forms.gle/W37ArEoarAVtYpxt9)** :orange_book:
 	- **| [PRE-FINALS](https://forms.gle/kkeQHX8ev6637tCK7)** :orange_book:
+- **: [FINALS](https://forms.gle/XZuJNijo3QFo33ec6)** :closed_book:	
 - **: [FINALS](https://forms.gle/NdL7ATZabBwj88bw8)** :closed_book:
 	- **| [FINALS](https://forms.gle/Ja3eTCGX3zSdHDtM6)** :closed_book:
 - **: [MIDTERM TO FINALS](https://forms.gle/RHuFqzrDRYEEY4oy6)** :trophy:
