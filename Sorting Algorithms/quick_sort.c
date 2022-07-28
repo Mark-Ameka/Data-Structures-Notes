@@ -69,7 +69,7 @@
 *			^			^
 *	
 *	we are at the last element of the entire array.
-*	we swap the outer loop pointer to the main pivot whic is 12 and 6.
+*	we swap the outer loop pointer to the main pivot which is 12 and 6.
 *	3	2	[6]	8	10	7	12
 *	
 *	3 	2	6	8	19	7	12		<---- list is now sorted.
