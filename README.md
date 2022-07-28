@@ -20,6 +20,7 @@ Legend: '|' Additional Link
 - **: [PRE-MIDTERMS](https://forms.gle/1cmLXqfXnmdXGPF86)** :blue_book:
 - **: [MIDTERM](https://forms.gle/baKLYq7wn3zyps9DA)** :green_book:
 	- **| [MIDTERM](https://forms.gle/eVkXDHtetxqujmuA9)** :green_book:
+- **: [PRE-FINALS](https://forms.gle/4YBCZMnFTiiYxnd18)** :orange_book:
 - **: [PRE-FINALS_T1](https://forms.gle/8NpvPHPWPNFwtku37)** :orange_book:
 - **: [PRE-FINALS_T2](https://forms.gle/5dYubo5ojZoLsda76)** :orange_book:
 - **: [PRE-FINALS_T3](https://forms.gle/rjYaAA4VvMK9yXXCA)** :orange_book:
