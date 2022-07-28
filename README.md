@@ -20,11 +20,13 @@ Legend: '|' Additional Link
 - **: [PRE-MIDTERMS](https://forms.gle/1cmLXqfXnmdXGPF86)** :blue_book:
 - **: [MIDTERM](https://forms.gle/baKLYq7wn3zyps9DA)** :green_book:
 	- **| [MIDTERM](https://forms.gle/eVkXDHtetxqujmuA9)** :green_book:
+- **: [PRE-FINALS](https://forms.gle/4YBCZMnFTiiYxnd18)** :orange_book:
 - **: [PRE-FINALS_T1](https://forms.gle/8NpvPHPWPNFwtku37)** :orange_book:
 - **: [PRE-FINALS_T2](https://forms.gle/5dYubo5ojZoLsda76)** :orange_book:
 - **: [PRE-FINALS_T3](https://forms.gle/rjYaAA4VvMK9yXXCA)** :orange_book:
 - **: [PRE-FINALS_PT](https://forms.gle/W37ArEoarAVtYpxt9)** :orange_book:
 	- **| [PRE-FINALS](https://forms.gle/kkeQHX8ev6637tCK7)** :orange_book:
+- **: [FINALS](https://forms.gle/XZuJNijo3QFo33ec6)** :closed_book:	
 - **: [FINALS](https://forms.gle/NdL7ATZabBwj88bw8)** :closed_book:
 	- **| [FINALS](https://forms.gle/Ja3eTCGX3zSdHDtM6)** :closed_book:
 - **: [MIDTERM TO FINALS](https://forms.gle/RHuFqzrDRYEEY4oy6)** :trophy:
