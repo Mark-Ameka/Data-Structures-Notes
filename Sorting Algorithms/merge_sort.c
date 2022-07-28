@@ -10,6 +10,28 @@
 typedef int data[MAX];
 data arr = {5,8,6,22,10,23,1,-99,2,11};
 
+/*
+	| = division
+	given an array of n = 8;
+	2	8	5	3	9	4	1	7
+	
+	We divide the array by 2 
+	=	[2	8	5	3]	|	[9	4	1	7]
+	
+	=	[2	8]	|	[5	3]	|	[9	4]	|	[1	7]
+	
+	=	[2] | [8] |	[5]	| [3] |	[9]	| [4] |	[1]	| [7]
+	
+	now, if the subarrays done dividing, sort all elements.
+	
+	=	[2	8]	|	[3	5]	|	[4	9]	|	[1	7]
+	
+	=	[2	3	5	8]	|	[1	4	7	9]
+	
+	=	[1	2	3	4	5	7	8	9]			<--- list is sorted
+	
+*/
+
 //display data
 void display_data(data arr, int size){
 	int i;
