@@ -15,8 +15,8 @@
 	given an element of n = 6
 	[25] [125] [522] [362] [1] [231]
 	
-	supposed we have 10 as max to store. Now, we first sort the last digit of each element.
-	how do we get the last digit? by the power of modulo we can check each digit by each element.
+	supposed we have 10 as max to store. Now, we first sort the least significant of each element.
+	how do we get the least significant digit? by the power of modulo we can check each digit from each element.
 	= e.g. 2861 % 10 = 286
 		   placement value = 1
 	
@@ -55,7 +55,7 @@
 	[1] [522] [25] [125] [231] [362]
  	^	 ^     ^    ^     ^     ^
 
-	[0]	=> 1    -   25			<== why is 1 and 25 in the 0 index? it is because they don't have hundred place value.
+	[0]	=> 1    -   25			<== why is 1 and 25 in the 0 index? it is because they don't have hundreds place value.
 	[1]	=> 125
 	[2]	=> 231
 	[3]	=> 362
